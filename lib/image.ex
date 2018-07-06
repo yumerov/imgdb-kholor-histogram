@@ -1,7 +1,14 @@
 defmodule ImgdbKholorHistogram.Image do
-  def empty_map do
-    0..255
-    |> Enum.map(&{&1, 0})
-    |> Map.new()
+  alias Imagineer
+
+  def extract_pixels(path) do
+    case path |> Imagineer.load() do
+      {:ok, pixel_matrix} ->
+        pixels = pixel_matrix |> Map.get(:pixels) |> List.flatten()
+        {:ok, pixels}
+
+      {:error, message} ->
+        {:error, message}
+    end
   end
 end
