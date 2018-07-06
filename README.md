@@ -1,4 +1,4 @@
-# ImgdbKholorHistogram
+# Imgdb Kholor Histogram
 
 **TODO: Add description**
 

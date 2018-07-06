@@ -1,0 +1,6 @@
+%{
+  "apex": {:hex, :apex, "1.0.0", "abf230314d35ca4c48a902f693247f190ad42fc14862b9c4f7dbb7077b21c20a", [:mix], [], "hexpm"},
+  "bunt": {:hex, :bunt, "0.1.6", "5d95a6882f73f3b9969fdfd1953798046664e6f77ec4e486e6fafc7caad97c6f", [:mix], [], "hexpm"},
+  "firex": {:hex, :firex, "0.1.0", "cea678e75ccc3cd27d8807f337a1349a18c5c3a27e7d2084adbe9525d2f2e8ab", [:mix], [{:bunt, "~> 0.1.0", [hex: :bunt, repo: "hexpm", optional: false]}], "hexpm"},
+  "imagineer": {:hex, :imagineer, "0.3.2", "42d2e9a9fcc83e8656fbe590828878b81c90e0b33fcbd59c69a33f9c8f9c412a", [:mix], [{:apex, "~>1.0.0", [hex: :apex, repo: "hexpm", optional: false]}], "hexpm"},
+}
