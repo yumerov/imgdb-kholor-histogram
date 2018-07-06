@@ -26,4 +26,36 @@ defmodule ColorMapsTest do
       assert actual_keys == expected_keys, "list should contains only between 0 and 255 only once"
     end
   end
+
+  describe "ImgdbKholorHistogram.ColorMaps.convert_pixels_to_channel_vectors/1" do
+    test "empty pixel list" do
+      ColorMaps.convert_pixels_to_channel_vectors([])
+      |> Kernel.==(%{:red => [], :green => [], :blue => []})
+      |> assert()
+    end
+
+    test "single pixel list" do
+      ColorMaps.convert_pixels_to_channel_vectors([{0, 3, 2}])
+      |> Kernel.==(%{:red => [0], :green => [3], :blue => [2]})
+      |> assert()
+    end
+
+    test "list of pixels" do
+      input_pixel_list = [
+        {0, 3, 2},
+        {0, 3, 2},
+        {100, 20, 10}
+      ]
+
+      expected_channel_vector = %{
+        :red => [0, 0, 100],
+        :green => [3, 3, 20],
+        :blue => [2, 2, 10]
+      }
+
+      ColorMaps.convert_pixels_to_channel_vectors(input_pixel_list)
+      |> Kernel.==(expected_channel_vector)
+      |> assert()
+    end
+  end
 end
